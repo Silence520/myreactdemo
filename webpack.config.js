@@ -1,3 +1,4 @@
+var path = require('path');
 module.exports = {
     //注意这里是exports不是export
     devtool: 'eval-source-map', //生成Source Maps,这里选择eval-source-map
@@ -25,5 +26,11 @@ module.exports = {
         open: true,
         historyApiFallback: false,
         host: '127.0.0.1'
-    }
+    },
+    resolve: {
+        extensions: ['.web.js', '.js', '.jsx', '.json'],
+        alias: {
+            '@': path.resolve(__dirname, 'src'),
+        }
+    },
 };

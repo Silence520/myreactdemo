@@ -2,7 +2,7 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { addTodo } from '../../actions/index';
+import { addTodo } from '@/actions/index';
 
 function headr(WrappedComponent) {
   return class HOC extends React.Component {
