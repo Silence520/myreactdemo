@@ -6,11 +6,11 @@ import { Provider } from 'react-redux';
 import configureStore from './store/index.js';
 const middleware = [thunk];
 const store = createStore(configureStore, applyMiddleware(...middleware));
-import Home from './views/home/index';
+import Rootrouter from './router/index';
 
 ReactDom.render(
  <Provider store={store}>
-  <Home />
+  <Rootrouter />
  </Provider>,
  document.getElementById('app')
 );
