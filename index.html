@@ -9,3 +9,31 @@
 </body>
 <script type="text/javascript" src="./dist/lib.bundle.js"></script>
 </html>
+
+
+
+
+
+
+
+<!-- babel-core  //babel-core是作为babel的核心存在，babel的核心api都在这个模块里面
+   babel.transform：用于字符串转码得到AST
+   babel.transformFile ：异步的文件转码方式，回调函数中的result与transform返回的对象一至
+   abel.transformFileSync： 同步的文件转码方式，返回结果与transform返回的对象一至
+   babel.transformFromAst： 将ast进行转译
+babel-eslint
+babel-loader
+babel-plugin-import  :按需加载插件。只需要引入模块即可，无需单独引入样式。
+babel-plugin-imports-transform : import代码智能转换Babel插件，优化(webpack等)打包构建体积
+babel-plugin-transform-decorators-legacy
+babel-plugin-transform-runtime
+babel-polyfill
+babel-preset-latest
+babel-preset-react
+babel-preset-stage-2
+babel-runtime
+babel-preset-env 
+babel-polyfill：polyfill在代码中的作用主要是用已经存在的语法和api实现一些浏览器还没有实现的api，对浏览器的一些缺陷做一些修补。例如Array新增了includes方法，我想使用，但是低版本的浏览器上没有，我就得做兼容处理
+    
+ //如果我们在代码中使用Object.assign方法，就用如下插件
+        "transform-object-assign" -->
