@@ -1,9 +1,9 @@
-const configureStore = (state = { num: 1 }, action) => {
+const configureStore = (state = { name: '请登录' }, action) => {
  console.log(action);
  switch (action.type) {
   case 'ADD_TODO':
    return {
-    num: state.num + action.payload
+    name:action.payload.data.name
    };
   default:
    return state;

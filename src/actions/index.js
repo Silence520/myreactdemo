@@ -10,15 +10,15 @@ import {seachApi} from "../api/index"
 //异步
 export function addTodo(val) {
  return function(dispatch, getState) {
-   // setTimeout(
-  //  () =>
-  //   dispatch({
-  //    type: 'ADD_TODO',
-  //    payload: val
-  //   }),
-  //  3000
-  // );
-     console.log(seachApi())
+  // console.log(getState()) 获取初始状态
+    return seachApi(function(res){
+       return dispatch({
+            type: 'ADD_TODO',
+            payload: res.data
+           })
+        
+    })
+    
 
  };
 }

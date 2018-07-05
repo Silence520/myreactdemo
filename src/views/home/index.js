@@ -28,25 +28,24 @@ class Home extends React.Component {
     this.props.toggleTodo(12);
   }
   render() {
-    console.log(this.props);
     return (
       <div>
         <button onClick={this.handleadd}> add</button>
-        <h1>{this.props.num}</h1>
+        <h1>{this.props.name}</h1>
       </div>
     );
   }
 }
 
 Home.propTypes = {
-  num: PropTypes.number,
+  name: PropTypes.string,
   toggleTodo: PropTypes.func
 };
 
 const mapStateToProps = state => {
-  console.log(state);
+  // console.log(state);//获取状态
   return {
-    num: state.configureStore.num
+    name: state.configureStore.name
   };
 };
 
