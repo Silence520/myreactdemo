@@ -1,8 +1,7 @@
-import React from 'react';
 import { bindActionCreators } from 'redux';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addTodo } from '@/actions/index';
+import  './index.css';
 
 function headr(WrappedComponent) {
   return class HOC extends React.Component {
@@ -22,25 +21,62 @@ function headr(WrappedComponent) {
 class Home extends React.Component {
   constructor(props) {
     super(props);
+    this.state={
+      num:3
+    }
     this.handleadd = this.handleadd.bind(this);
   }
+  componentWillMount(){
+ console.log('componentWillMount')
+  }
+ componentDidMount(){
+ console.log('componentDidMount')
+ }
+ componentWillReceiveProps(){
+ console.log('componentWillReceiveProps')
+ }
+ shouldComponentUpdate(){
+ console.log('shouldComponentUpdate')
+ return true
+ }
+ componentWillUpdata(){
+ console.log('componentWillUpdata')
+ }
+ componentDidUpdate(){
+ console.log('componentDidUpdate')
+ }
+ componentWillUnmount(){
+   console.log('componentWillUnmount')
+ }
+
+
+
+
+
+
   handleadd() {
-    this.props.toggleTodo(12);
+       this.props.toggleTodo(12);
+       let newValue=4
+       this.setState((state)=>{
+              if(state.num === newValue){
+                  return null;
+              }
+              return {num:newValue}
+          })
+
   }
   render() {
-    return (
-      <div>
-        <button onClick={this.handleadd}> add</button>
-        <h1>{this.props.name}</h1>
-      </div>
-    );
+    console.log('render')
+    return [
+        <button key='1' onClick={this.handleadd}> add</button>,<h1 key='12'>{this.props.name}  {this.state.num} </h1>
+    ];
   }
 }
 
-Home.propTypes = {
-  name: PropTypes.string,
-  toggleTodo: PropTypes.func
-};
+ Home.propTypes={
+    name: PropTypes.string,
+    toggleTodo: PropTypes.func
+  };
 
 const mapStateToProps = state => {
   // console.log(state);//获取状态
@@ -53,28 +89,7 @@ const mapDispatchToProps = dispatch => ({
   toggleTodo: bindActionCreators(addTodo, dispatch)
 });
 
-// const mapDispatchToProps = dispatch => ({
-//  toggleTodo: val => dispatch(addTodo(val))
-// });
-
 export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(Home);
-
-// import React from 'react';
-// import ReactDom from 'react-dom';
-// import { createStore } from 'redux';
-// import { Provider } from 'react-redux';
-// import configureStore from './store/index.js';
-
-// const store = createStore(configureStore);
-
-// import Home from './views/home/index';
-
-// ReactDom.render(
-//  <Provider store={store}>
-//   <Home />
-//  </Provider>,
-//  document.getElementById('app')
-// );

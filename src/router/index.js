@@ -1,6 +1,6 @@
 import React from 'react';
 import { HashRouter as Router, Route, Link, Switch, history } from 'react-router-dom';
-import Home from '../views/home/index';
+import Home from '../views/home/index.js';
 
 const About = () => (
   <div>

@@ -14,4 +14,3 @@ export const seachApi = (fun) =>{
     console.log(res)
   })
 }
-

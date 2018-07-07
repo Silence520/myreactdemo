@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node_modules/.bin/webpack --config webpack.js --watch",
-    "dev": "webpack-dev-server --content-base build --inline --hot"
+    "start": "webpack-dev-server --content-base build --inline --hot",
+    "dev": "cross-env NODE_ENV=development node_modules/.bin/webpack --config webpack.config.js",
+    "build": "cross-env NODE_ENV=production node_modules/.bin/webpack  --config webpack.config.js"
   },
   "keywords": [],
   "author": "",
@@ -27,11 +28,23 @@
     "webpack-dev-server": "^2.7.1"
   },
   "dependencies": {
+    "autoprefixer": "^8.6.4",
     "axios": "^0.18.0",
+    "cross-env": "^5.2.0",
+    "css-loader": "^0.28.11",
+    "cssnano": "^4.0.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "html-webpack-plugin": "^3.2.0",
+    "img-loader": "^3.0.0",
     "path": "^0.12.7",
+    "postcss-cssnext": "^3.1.0",
+    "postcss-loader": "^2.1.5",
+    "postcss-preset-env": "^5.2.1",
+    "precss": "^3.1.2",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
-    "redux-deferred": "^0.1.0",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "style-loader": "^0.21.0",
+    "url-loader": "^1.0.1"
   }
 }

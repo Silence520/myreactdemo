@@ -1,0 +1,12 @@
+@import url(../../utils/common.css);
+
+.demo-header{
+  height: var(--height);
+  line-height: var(--height);
+  font-size: var(--height);
+  margin-top: 20px;
+  margin-right: 30px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  display: flex;
+}
